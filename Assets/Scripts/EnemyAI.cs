@@ -46,17 +46,28 @@ public class EnemyAI : MonoBehaviour
 
                 break;
 
+            case EnemyStates.Warning:
+                _aIPath.canMove = false;
+                _enemyAnimator.IsWalking(false);
+                _enemyAnimator.IsRunning(false);
+                _enemyAnimator.PlayFollow();
+
+                _currentState = EnemyStates.Following;
+                break;
+
             case EnemyStates.Following:
                 _aiDestinationSetter.target = _player.transform;
 
-                _enemyAnimator.PlayFollow();
+                _aIPath.canMove = true;
                 _enemyAnimator.IsWalking(false);
                 _enemyAnimator.IsRunning(true);
 
                 _aIPath.maxSpeed = 2;
 
+                
                 if (Vector3.Distance(gameObject.transform.position, _player.transform.position) < _enemyAttack.AttackRange)
                 {
+                    _aIPath.canMove = false;
                     _enemyAnimator.IsWalking(false);
                     _enemyAnimator.IsRunning(false);
 
@@ -67,11 +78,14 @@ public class EnemyAI : MonoBehaviour
                     }
                 }
 
+                _aIPath.canMove = true;
+
                 if (Vector3.Distance(gameObject.transform.position, _player.transform.position) >= _stopTargetFollovingRange)
                 {
                     _currentState = EnemyStates.Roaming;
                 }
                 break;
+            
         }
     }
 
@@ -79,7 +93,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (Vector3.Distance(gameObject.transform.position, _player.transform.position) <= _targetFollowRange)
         {
-            _currentState = EnemyStates.Following;
+            _currentState = EnemyStates.Warning;
         }
     }
 
@@ -107,5 +121,6 @@ public class EnemyAI : MonoBehaviour
 public enum EnemyStates
 {
     Roaming,
-    Following
+    Following,
+    Warning
 }

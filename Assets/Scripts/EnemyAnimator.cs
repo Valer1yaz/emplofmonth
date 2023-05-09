@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class EnemyAnimator : MonoBehaviour
@@ -9,10 +10,12 @@ public class EnemyAnimator : MonoBehaviour
     public static readonly int Follow = Animator.StringToHash("Follow");
     public static readonly int Walk = Animator.StringToHash("IsWalking");
     public static readonly int Run = Animator.StringToHash("IsRunning");
+    [SerializeField] private AIPath _aIPath;
 
     public void PlayAttack()
     {
         _animator.SetTrigger(Attack);
+        
     }
 
     public void PlayFollow()

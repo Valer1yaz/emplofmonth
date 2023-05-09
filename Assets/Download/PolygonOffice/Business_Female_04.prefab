@@ -1453,7 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9273b4b937673c743a46ae011c1a913a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackRange: 2
+  _attackRange: 3
   _damage: 5
   _coolDown: 10
 --- !u!114 &7301441781285472877
@@ -1469,6 +1469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3195059530255546073}
+  _aIPath: {fileID: 0}
 --- !u!95 &3195059530255546073
 Animator:
   serializedVersion: 4
@@ -1557,10 +1558,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.75
+  m_Radius: 0.3541427
+  m_Height: 1.8582289
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0.0009703636, y: 0.9325255, z: 0}
 --- !u!114 &3244269490749827747
 MonoBehaviour:
   m_ObjectHideFlags: 0
