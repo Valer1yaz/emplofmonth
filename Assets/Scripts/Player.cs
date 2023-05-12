@@ -8,12 +8,16 @@ public class Player : MonoBehaviour
     [SerializeField] private int _health;
     public TextMeshProUGUI _healthText;
     public static bool _gameOver;
+    private AudioSource _audioSource;
     public AudioClip _damagePlayerAudio;
 
     void Start()
     {
         _gameOver = false;
+
+        _audioSource = GetComponent<AudioSource>();
     }
+
     void Update()
     {
         _healthText.text = "" + _health;
@@ -32,8 +36,10 @@ public class Player : MonoBehaviour
             return;
         }
         _health -= damage;
+
         HapticPulseUnity();
-        GetComponent<AudioSource>().PlayOneShot(_damagePlayerAudio);
+
+        _audioSource.PlayOneShot(_damagePlayerAudio);
     }
 
     static void HapticPulseUnity()

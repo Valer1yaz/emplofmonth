@@ -608,6 +608,7 @@ MonoBehaviour:
   _attackRange: 3
   _damage: 5
   _coolDown: 10
+  _enemyAnimator: {fileID: 7301441781285472877}
 --- !u!114 &7301441781285472877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3195059530255546073}
-  _aIPath: {fileID: 0}
+  _aIPath: {fileID: 9158582276962385039}
 --- !u!95 &3195059530255546073
 Animator:
   serializedVersion: 4
