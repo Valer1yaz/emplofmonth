@@ -33,11 +33,13 @@ public class EnemyAttack : MonoBehaviour
 
         if (_timer < _coolDown)
         {
+            _enemyAnimator.IsWaiting(true);
             return;
         }
+        _enemyAnimator.IsWaiting(false);
         CanAttack = true;
         _timer = 0;
-        _enemyAnimator.IsWaiting(true);
+        
     }
     public void TryAttackPlayer()
     {

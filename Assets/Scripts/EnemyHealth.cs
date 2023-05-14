@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public Slider _healthBar;
     public AudioClip _damageEnemyAudio;
     public AudioClip _deathEnemyAudio;
+    [SerializeField] private GameObject _deathAnimation;
 
     void Update()
     {
@@ -23,12 +24,12 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(_damageEnemyAudio);
             _healthBar.gameObject.SetActive(false);
             Destroy(this.gameObject);
+            Instantiate(_deathAnimation, transform.position, Quaternion.identity);
+
         }
         else
         {
             GetComponent<AudioSource>().PlayOneShot(_deathEnemyAudio);
         }
-        
-
     }
 }

@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 2278762255234550565}
   m_Layer: 0
   m_Name: Business_Male_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1777,7 +1777,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a3730216d17d0ad4fa64c3ef73fcd483, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1800,6 +1800,7 @@ MonoBehaviour:
   _healthBar: {fileID: 7660702580059962332}
   _damageEnemyAudio: {fileID: 8300000, guid: baf35e72fd729734989a82dd1e3b29ea, type: 3}
   _deathEnemyAudio: {fileID: 8300000, guid: bae9aa72dcd5be8449eb14268166381f, type: 3}
+  _deathAnimation: {fileID: 5985634496115995773, guid: 463cf9f7af4680240898f6aeba3fe3e6, type: 3}
 --- !u!114 &3651319145111814739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1815,7 +1816,7 @@ MonoBehaviour:
   version: 5
   radius: 0.5
   height: 2
-  canMove: 1
+  canMove: 0
   maxSpeed: 1
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:

@@ -1729,7 +1729,7 @@ GameObject:
   - component: {fileID: 7290026448977022891}
   m_Layer: 0
   m_Name: Developer_Male_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1841,6 +1841,7 @@ MonoBehaviour:
   _healthBar: {fileID: 973719405607476403}
   _damageEnemyAudio: {fileID: 8300000, guid: 2a65c7e35d6004a4182c6f31f7568def, type: 3}
   _deathEnemyAudio: {fileID: 8300000, guid: d3e7a192ca6985846a5c6618926f4fa3, type: 3}
+  _deathAnimation: {fileID: 5985634496115995773, guid: 463cf9f7af4680240898f6aeba3fe3e6, type: 3}
 --- !u!54 &4702223882728845488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1928,7 +1929,7 @@ MonoBehaviour:
   version: 5
   radius: 0.5
   height: 2
-  canMove: 1
+  canMove: 0
   maxSpeed: 1
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
