@@ -2,10 +2,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int _health;
+    [SerializeField] public int _health;
     public TextMeshProUGUI _healthText;
     public static bool _gameOver;
     private AudioSource _audioSource;
@@ -40,6 +41,19 @@ public class Player : MonoBehaviour
         HapticPulseUnity();
 
         _audioSource.PlayOneShot(_damagePlayerAudio);
+    }
+
+    public void IncreaseHealth(int healthAmount)
+    {
+        if (_health + healthAmount <= 100)
+        {
+            _health = 100;
+        }
+        else
+        {
+            _health += healthAmount;
+        }
+        
     }
 
     static void HapticPulseUnity()

@@ -11,7 +11,6 @@ public class WeaponScript : MonoBehaviour
         if(other.tag == "Enemy")
         {
             other.GetComponent<EnemyHealth>().TakeDamage(_damageAmount);
-            Debug.Log("gdgf");
         }
     }
 }
