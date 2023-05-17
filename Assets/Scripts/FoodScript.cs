@@ -13,7 +13,7 @@ public class FoodScript : MonoBehaviour
 
     void Update()
     {
-        var device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        /*var device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
         if (device.TryGetFeatureValue(CommonUsages.triggerButton, out var triggerValue) && triggerValue && !isPressed)
         {
             if (player._health >= 0)
@@ -27,6 +27,23 @@ public class FoodScript : MonoBehaviour
         else if (!triggerValue)
         {
             isPressed = false;
+        }*/
+    }
+
+    private void Start()
+    {
+        XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
+        grabbable.activated.AddListener(Healing);
+
+    }
+
+    public void Healing(ActivateEventArgs arg)
+    {
+        if (player._health >= 0)
+        {
+            player.IncreaseHealth(_healthAmount);
+            Destroy(this.gameObject);
+            Instantiate(_Animation, transform.position, Quaternion.identity);
         }
     }
 }
