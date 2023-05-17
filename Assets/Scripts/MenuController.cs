@@ -10,23 +10,10 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Main Scene");
     }
 
-    public void SettingsBtn()
-    {
-
-    }
-
     public void ExitBtn()
     {
         Application.Quit();
     }
 
-    public void ContinueBtn()
-    {
-        
-    }
 
-    public void PauseBtn()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
 }
