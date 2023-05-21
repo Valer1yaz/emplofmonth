@@ -30,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
             int randThing = Random.Range(0, _thingPrefabs.Length);
             Instantiate(_thingPrefabs[randThing], transform.position, Quaternion.identity);
             _enemySpawners._enemyCount--;
+            
 
         }
         else

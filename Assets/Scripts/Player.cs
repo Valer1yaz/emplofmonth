@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
         if (_gameOver)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Results");
         }
     }
 

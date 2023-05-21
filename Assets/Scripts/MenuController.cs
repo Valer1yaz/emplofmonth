@@ -15,5 +15,10 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
+    public void MenuBtn()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
 
 }
