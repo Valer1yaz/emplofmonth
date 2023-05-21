@@ -5,9 +5,9 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private float _attackRange;
     [SerializeField] private int _damage;
     [SerializeField] private float _coolDown;
-    [SerializeField] private EnemyAnimator _enemyAnimator;
     private Player _player;
     private float _timer;
+
     public bool CanAttack { get; private set;  }
     public float AttackRange => _attackRange;
 
@@ -25,7 +25,6 @@ public class EnemyAttack : MonoBehaviour
     {
         if (CanAttack)
         {
-            _enemyAnimator.IsWaiting(false);
             return;
         }
         
@@ -33,10 +32,8 @@ public class EnemyAttack : MonoBehaviour
 
         if (_timer < _coolDown)
         {
-            _enemyAnimator.IsWaiting(true);
             return;
         }
-        _enemyAnimator.IsWaiting(false);
         CanAttack = true;
         _timer = 0;
         
@@ -46,4 +43,5 @@ public class EnemyAttack : MonoBehaviour
         _player.TakeDamage(_damage);
         CanAttack = false;
     }
+
 }

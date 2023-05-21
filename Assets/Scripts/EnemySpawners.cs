@@ -11,18 +11,22 @@ public class EnemySpawners : MonoBehaviour
     [SerializeField] private int _maxY;
     [SerializeField] private float _height;
     private float _currentSpawnTimer;
+    public int _enemyCount = 5; //подсчет врагов на карте
+    public int _enemyLimit = 10; //предел врагов на карте
     
     
     private void Update()
     {
         _currentSpawnTimer += Time.deltaTime;
-        if (_currentSpawnTimer >= _spawnInterval)
+        if (_currentSpawnTimer >= _spawnInterval && _enemyCount < _enemyLimit)
         {
             int randEnemy = UnityEngine.Random.Range(0, _enemyPrefabs.Length);
             var enemyInstance = Instantiate(_enemyPrefabs[randEnemy]);
             var newPosition = GenerateStartPosition();
             enemyInstance.transform.position = newPosition;
             _currentSpawnTimer = 0;
+            _enemyCount++;
+            Debug.Log(_enemyCount);
         }
     }
 

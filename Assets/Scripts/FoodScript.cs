@@ -39,7 +39,7 @@ public class FoodScript : MonoBehaviour
 
     public void Healing(ActivateEventArgs arg)
     {
-        if (player._health >= 0)
+        if (player._health > 0)
         {
             player.IncreaseHealth(_healthAmount);
             Destroy(this.gameObject);

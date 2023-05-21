@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public AudioClip _deathEnemyAudio;
     [SerializeField] private GameObject _deathAnimation;
     [SerializeField] private GameObject[] _thingPrefabs;
+    public EnemySpawners _enemySpawners;
 
     void Update()
     {
@@ -28,6 +29,7 @@ public class EnemyHealth : MonoBehaviour
             Instantiate(_deathAnimation, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.identity);
             int randThing = Random.Range(0, _thingPrefabs.Length);
             Instantiate(_thingPrefabs[randThing], transform.position, Quaternion.identity);
+            _enemySpawners._enemyCount--;
 
         }
         else

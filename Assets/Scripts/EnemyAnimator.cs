@@ -10,7 +10,6 @@ public class EnemyAnimator : MonoBehaviour
     public static readonly int Follow = Animator.StringToHash("Follow");
     public static readonly int Walk = Animator.StringToHash("IsWalking");
     public static readonly int Run = Animator.StringToHash("IsRunning");
-    public static readonly int Wait = Animator.StringToHash("IsWaiting");
     [SerializeField] private AIPath _aIPath;
 
     public void PlayAttack()
@@ -32,10 +31,4 @@ public class EnemyAnimator : MonoBehaviour
     {
         _animator.SetBool(Run, condition);
     }
-
-    public void IsWaiting(bool condition)
-    {
-        _animator.SetBool(Run, condition);
-    }
-
 }

@@ -47,10 +47,11 @@ public class EnemyAI : MonoBehaviour
                 break;
 
             case EnemyStates.Warning:
-                _aIPath.canMove = false;
+               // _aIPath.canMove = false;
                 _enemyAnimator.IsWalking(false);
                 _enemyAnimator.IsRunning(false);
                 _enemyAnimator.PlayFollow();
+
 
                 _currentState = EnemyStates.Following;
                 break;
@@ -58,7 +59,8 @@ public class EnemyAI : MonoBehaviour
             case EnemyStates.Following:
                 _aiDestinationSetter.target = _player.transform;
 
-                _aIPath.canMove = true;
+                
+               // _aIPath.canMove = true;
                 _enemyAnimator.IsWalking(false);
                 _enemyAnimator.IsRunning(true);
 
@@ -67,18 +69,19 @@ public class EnemyAI : MonoBehaviour
                 
                 if (Vector3.Distance(gameObject.transform.position, _player.transform.position) < _enemyAttack.AttackRange)
                 {
-                    _aIPath.canMove = false;
+                    //_aIPath.canMove = false;
                     _enemyAnimator.IsWalking(false);
                     _enemyAnimator.IsRunning(false);
 
                     if (_enemyAttack.CanAttack)
                     {
                         _enemyAttack.TryAttackPlayer();
+
                         _enemyAnimator.PlayAttack();
                     }
                 }
 
-                _aIPath.canMove = true;
+                //_aIPath.canMove = true;
 
                 if (Vector3.Distance(gameObject.transform.position, _player.transform.position) >= _stopTargetFollovingRange)
                 {
