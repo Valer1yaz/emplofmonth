@@ -5,11 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class FoodScript : MonoBehaviour
 {
     [SerializeField] private int _healthAmount;
-    public float pressThreshold = 0.9f;
-    private Player player;
+    private Player _player;
     [SerializeField] private GameObject _Animation;
 
-    private bool isPressed = false;
 
     void Update()
     {
@@ -32,6 +30,7 @@ public class FoodScript : MonoBehaviour
 
     private void Start()
     {
+        _player = FindObjectOfType<Player>();
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.activated.AddListener(Healing);
 
@@ -39,9 +38,9 @@ public class FoodScript : MonoBehaviour
 
     public void Healing(ActivateEventArgs arg)
     {
-        if (player._health > 0)
+        if (_player._health > 0)
         {
-            player.IncreaseHealth(_healthAmount);
+            _player.IncreaseHealth(_healthAmount);
             Destroy(this.gameObject);
             Instantiate(_Animation, transform.position, Quaternion.identity);
         }

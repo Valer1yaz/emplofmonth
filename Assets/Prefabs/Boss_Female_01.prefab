@@ -1201,7 +1201,6 @@ MonoBehaviour:
   _attackRange: 3
   _damage: 5
   _coolDown: 10
-  _enemyAnimator: {fileID: 5479242193024987068}
 --- !u!95 &7844387577553950949
 Animator:
   serializedVersion: 4
@@ -1254,7 +1253,13 @@ MonoBehaviour:
   _deathEnemyAudio: {fileID: 8300000, guid: 8b189e1d163a7044eb5cb0e5d285494d, type: 3}
   _deathAnimation: {fileID: 5985634496115995773, guid: 463cf9f7af4680240898f6aeba3fe3e6, type: 3}
   _thingPrefabs:
-  - {fileID: 0}
+  - {fileID: 4011834649827576448, guid: 901cbb34b75b87d4abd4b199950b334b, type: 3}
+  - {fileID: 5158095382189981127, guid: 4ca58b9b2a08b9a45830edbeaf4c8225, type: 3}
+  - {fileID: 2362644718900927941, guid: 16f16bf06335733449409238ca49fd46, type: 3}
+  - {fileID: 7944348050079585684, guid: 8a50b4af19ace4e44b0665a88872dc53, type: 3}
+  - {fileID: 3330444864290454954, guid: c46bb74b3da8e30438c7d0263acec74b, type: 3}
+  _enemySpawners: {fileID: 0}
+  _enemyKills: 0
 --- !u!114 &7319219972069589717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,7 +1275,7 @@ MonoBehaviour:
   version: 5
   radius: 0.5
   height: 2
-  canMove: 0
+  canMove: 1
   maxSpeed: 1
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,10 +13,12 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject _deathAnimation;
     [SerializeField] private GameObject[] _thingPrefabs;
     public EnemySpawners _enemySpawners;
+    
 
     void Update()
     {
         _healthBar.value = _enemyHealth;
+        _enemySpawners = GetComponent<EnemySpawners>();
     }
 
     public void TakeDamage(int endamage)
@@ -27,10 +30,11 @@ public class EnemyHealth : MonoBehaviour
             _healthBar.gameObject.SetActive(false);
             Destroy(this.gameObject);
             Instantiate(_deathAnimation, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.identity);
-            int randThing = Random.Range(0, _thingPrefabs.Length);
+            int randThing = UnityEngine.Random.Range(0, _thingPrefabs.Length);
             Instantiate(_thingPrefabs[randThing], transform.position, Quaternion.identity);
             _enemySpawners._enemyCount--;
-            
+            Results._enemyKills++;
+            Debug.Log(Results._enemyKills);
 
         }
         else

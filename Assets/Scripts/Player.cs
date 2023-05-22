@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
     public void IncreaseHealth(int healthAmount)
     {
-        if (_health + healthAmount <= 100)
+        if (_health + healthAmount >= 100)
         {
             _health = 100;
         }

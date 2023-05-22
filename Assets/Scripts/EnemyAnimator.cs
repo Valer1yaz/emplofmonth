@@ -31,4 +31,14 @@ public class EnemyAnimator : MonoBehaviour
     {
         _animator.SetBool(Run, condition);
     }
+
+    public void OnEnableCanMove()
+    {
+        _aIPath.canMove = true;
+    }
+
+    public void OnDisableCanMove()
+    {
+        _aIPath.canMove = false;
+    }
 }
