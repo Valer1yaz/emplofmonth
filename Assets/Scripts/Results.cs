@@ -10,7 +10,7 @@ public class Results : MonoBehaviour
     public TextMeshProUGUI KillsText;
     public TextMeshProUGUI ObjectsText;
 
-    public static Int32 _enemyKills = 0;
+    public int _enemyKills = 0;
 
     int Object = 0;
 
