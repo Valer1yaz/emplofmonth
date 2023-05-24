@@ -2,7 +2,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class Player : MonoBehaviour
     public AudioClip _damagePlayerAudio;
     public GameObject ResultScreen;
     public GameObject HealthScreen;
+
 
     void Start()
     {
@@ -30,20 +30,22 @@ public class Player : MonoBehaviour
 
         if (_gameOver)
         {
-            Time.timeScale = 0;
             ResultScreen.SetActive(true);
-            HealthScreen.SetActive(false);
+            HealthScreen.SetActive(false);     
+            Time.timeScale = 0;
         }
     }
 
     public void TakeDamage(int damage)
     {
-        if (_health - damage <= 0)
+        _health -= damage;
+
+        if (_health <= 0)
         {
             _gameOver = true;
+            _health = 0;
             return;
         }
-        _health -= damage;
 
         HapticPulseUnity();
 
@@ -52,14 +54,10 @@ public class Player : MonoBehaviour
 
     public void IncreaseHealth(int healthAmount)
     {
-        if (_health + healthAmount >= 100)
-        {
+        _health += healthAmount;
+        if (_health >= 100)
             _health = 100;
-        }
-        else
-        {
-            _health += healthAmount;
-        }
+
         
     }
 

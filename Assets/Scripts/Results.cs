@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Results : MonoBehaviour
 {
-    public Text KillsText;
-    public Text ObjectsText;
+    public TextMeshProUGUI KillsText;
+    public TextMeshProUGUI ObjectsText;
 
     int Kills = 0;
     int Objects = 0;
@@ -17,10 +18,10 @@ public class Results : MonoBehaviour
     }
 
     public void AddKill(){
-        Kills += 1;
+        Kills++;
     }
 
     public void AddObject(){
-        Objects += 1;
+        Objects++;
     }
 }
