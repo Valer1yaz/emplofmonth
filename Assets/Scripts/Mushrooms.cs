@@ -15,6 +15,6 @@ public class Mushrooms : MonoBehaviour
         grabInteractable.selectEntered.AddListener(_ => gameObject.SetActive(false));
         grabInteractable.selectExited.AddListener(_ => gameObject.SetActive(false));
         Instantiate(_Animation, transform.position, Quaternion.identity);
-        _results._objects++;
+        _results.AddObject();
     }
 }

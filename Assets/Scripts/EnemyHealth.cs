@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
             Instantiate(_thingPrefabs[randThing], transform.position, Quaternion.identity);
             
             _enemySpawners._enemyCount--;
-            _results._enemyKills++;
+            _results.AddKill();
 
         }
         else

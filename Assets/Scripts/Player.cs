@@ -11,12 +11,17 @@ public class Player : MonoBehaviour
     public static bool _gameOver;
     private AudioSource _audioSource;
     public AudioClip _damagePlayerAudio;
+    public GameObject ResultScreen;
+    public GameObject HealthScreen;
 
     void Start()
     {
         _gameOver = false;
 
         _audioSource = GetComponent<AudioSource>();
+        HealthScreen.SetActive(true);
+        ResultScreen.SetActive(false);
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -25,7 +30,9 @@ public class Player : MonoBehaviour
 
         if (_gameOver)
         {
-            SceneManager.LoadScene("Results");
+            Time.timeScale = 0;
+            ResultScreen.SetActive(true);
+            HealthScreen.SetActive(false);
         }
     }
 

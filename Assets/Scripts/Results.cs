@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
-using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Results : MonoBehaviour
 {
-    public TextMeshProUGUI KillsText;
-    public TextMeshProUGUI ObjectsText;
+    public Text KillsText;
+    public Text ObjectsText;
 
-    public int _enemyKills = 0;
-    public int _objects = 0;
+    int Kills = 0;
+    int Objects = 0;
 
-    void Update() 
-    {
-        KillsText.text = Convert.ToString(_enemyKills);
-        ObjectsText.text = Convert.ToString(_objects);
+    void Update() {
+        KillsText.text = Kills.ToString();
+        ObjectsText.text = Objects.ToString();
+    }
+
+    public void AddKill(){
+        Kills += 1;
+    }
+
+    public void AddObject(){
+        Objects += 1;
     }
 }
