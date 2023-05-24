@@ -4,19 +4,51 @@ public class EnemySpawners : MonoBehaviour
 {
     [SerializeField] private GameObject[] _enemyPrefabs;
 
-    [SerializeField] private float _spawnInterval;
+    private float _spawnInterval;
     [SerializeField] private int _mixX;
     [SerializeField] private int _maxX;
     [SerializeField] private int _mixY;
     [SerializeField] private int _maxY;
     [SerializeField] private float _height;
     private float _currentSpawnTimer;
-    public int _enemyCount = 5; //подсчет врагов на карте
-    public int _enemyLimit = 10; //предел врагов на карте
-    
-    
+    private LevelState _levelState;
+
+    public int _enemyCount; //подсчет врагов на карте
+    public int _enemyLimit; //предел врагов на карте
+
+    private void Start()
+    {
+        int Level = SliderDifficulty._difficultyLevel;
+
+        if (Level == 0)
+            _levelState = LevelState.First;
+        else if (Level == 1)
+            _levelState = LevelState.Second;
+        else
+            _levelState = LevelState.Third;
+        
+        switch (_levelState)
+        {
+            case LevelState.First:
+                _enemyLimit = 3;
+                _spawnInterval = 60;
+                break;
+
+            case LevelState.Second:
+                _enemyLimit = 8;
+                _spawnInterval = 30;
+                break;
+
+            case LevelState.Third:
+                _enemyLimit = 12;
+                _spawnInterval = 15;
+                break;
+        }
+    }
+
     private void Update()
     {
+        
         _currentSpawnTimer += Time.deltaTime;
         if (_currentSpawnTimer >= _spawnInterval && _enemyCount < _enemyLimit)
         {
@@ -35,4 +67,11 @@ public class EnemySpawners : MonoBehaviour
         var startPos = new Vector3(Random.Range(_mixX, _maxX), _height, Random.Range(_mixY, _maxY));
         return startPos;
     }
+}
+
+public enum LevelState
+{
+    First,
+    Second,
+    Third
 }

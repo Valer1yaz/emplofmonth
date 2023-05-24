@@ -11,11 +11,11 @@ public class Results : MonoBehaviour
     public TextMeshProUGUI ObjectsText;
 
     public int _enemyKills = 0;
+    public int _objects = 0;
 
-    int Object = 0;
-
-    void Update() {
-        KillsText.text = " " + _enemyKills;
-        ObjectsText.text = Convert.ToString(Object);
+    void Update() 
+    {
+        KillsText.text = Convert.ToString(_enemyKills);
+        ObjectsText.text = Convert.ToString(_objects);
     }
 }

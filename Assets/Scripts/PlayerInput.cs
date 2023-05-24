@@ -16,6 +16,7 @@ public class PlayerInput : MonoBehaviour
         var actionValue = _activateAction.action.ReadValue<float>();
 
         _animator.SetFloat(GRIP, gripValue);
-        _animator.SetFloat(TRIGGER, gripValue);
+        _animator.SetFloat(TRIGGER, actionValue);
     }
 }
+

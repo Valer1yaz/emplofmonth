@@ -24,7 +24,6 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         _healthBar.value = _enemyHealth;
-        
     }
 
     public void TakeDamage(int endamage)
@@ -42,8 +41,6 @@ public class EnemyHealth : MonoBehaviour
             
             _enemySpawners._enemyCount--;
             _results._enemyKills++;
-            
-            Debug.Log(_results._enemyKills);
 
         }
         else

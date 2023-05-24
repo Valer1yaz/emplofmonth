@@ -8,26 +8,6 @@ public class FoodScript : MonoBehaviour
     private Player _player;
     [SerializeField] private GameObject _Animation;
 
-
-    void Update()
-    {
-        /*var device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-        if (device.TryGetFeatureValue(CommonUsages.triggerButton, out var triggerValue) && triggerValue && !isPressed)
-        {
-            if (player._health >= 0)
-            {
-                player.IncreaseHealth(_healthAmount);
-                Destroy(this.gameObject);
-                Instantiate(_Animation, transform.position, Quaternion.identity);
-            }
-            isPressed = true;
-        }
-        else if (!triggerValue)
-        {
-            isPressed = false;
-        }*/
-    }
-
     private void Start()
     {
         _player = FindObjectOfType<Player>();

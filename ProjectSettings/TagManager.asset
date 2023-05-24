@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Weapon
   - Enemy
+  - Mushrooms
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
