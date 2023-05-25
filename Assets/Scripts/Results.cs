@@ -14,12 +14,10 @@ public class Results : MonoBehaviour
         KillsText.text = Kills.ToString();
         ObjectsText.text = Objects.ToString();
     }
-
     public void AddKill()
     {
         Kills++;
     }
-
     public void AddObject()
     {
         Objects++;

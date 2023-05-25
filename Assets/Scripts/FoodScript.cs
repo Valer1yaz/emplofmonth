@@ -12,9 +12,7 @@ public class FoodScript : MonoBehaviour
         _player = FindObjectOfType<Player>();
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.activated.AddListener(Healing);
-
     }
-
     public void Healing(ActivateEventArgs arg)
     {
         if (_player._health > 0)

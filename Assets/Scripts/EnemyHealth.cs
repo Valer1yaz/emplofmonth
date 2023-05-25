@@ -38,7 +38,6 @@ public class EnemyHealth : MonoBehaviour
             
             _enemySpawners._enemyCount--;
             _results.AddKill();
-
         }
         else
         {

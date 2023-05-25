@@ -18,7 +18,7 @@ public class SliderDifficulty : MonoBehaviour
             _sliderDifText.text = v.ToString("0");
         });
 
-        _sliderVol.value = 0.5f;
+        _sliderVol.value = 1f;
 
     }
     private void Update()

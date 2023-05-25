@@ -14,26 +14,20 @@ public class Player : MonoBehaviour
     public GameObject HandMenu;
     private Player _player;
 
-
-
     void Start()
     {
-        
         _gameOver = false;
-
         _audioSource = GetComponent<AudioSource>();
         HealthScreen.SetActive(true);
         ResultScreen.SetActive(false);
         HandMenu.SetActive(true); 
         Time.timeScale = 1;
         _player = FindObjectOfType<Player>();
-        
     }
 
     void Update()
     {
         _healthText.text = "" + _health;
-
         if (_gameOver)
         {
             ResultScreen.SetActive(true);
@@ -47,16 +41,13 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _health -= damage;
-
         if (_health <= 0)
         {
             _gameOver = true;
             _health = 0;
             return;
         }
-
         HapticPulseUnity();
-
         _audioSource.PlayOneShot(_damagePlayerAudio);
     }
 
@@ -65,8 +56,6 @@ public class Player : MonoBehaviour
         _health += healthAmount;
         if (_health >= 100)
             _health = 100;
-
-        
     }
 
     static void HapticPulseUnity()

@@ -3,7 +3,6 @@ using UnityEngine;
 public class EnemySpawners : MonoBehaviour
 {
     [SerializeField] private GameObject[] _enemyPrefabs;
-
     private float _spawnInterval;
     [SerializeField] private int _mixX;
     [SerializeField] private int _maxX;
@@ -48,7 +47,6 @@ public class EnemySpawners : MonoBehaviour
 
     private void Update()
     {
-        
         _currentSpawnTimer += Time.deltaTime;
         if (_currentSpawnTimer >= _spawnInterval && _enemyCount < _enemyLimit)
         {

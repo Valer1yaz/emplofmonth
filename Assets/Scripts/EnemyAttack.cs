@@ -27,21 +27,17 @@ public class EnemyAttack : MonoBehaviour
         {
             return;
         }
-        
         _timer += Time.deltaTime;
-
         if (_timer < _coolDown)
         {
             return;
         }
         CanAttack = true;
         _timer = 0;
-        
     }
     public void TryAttackPlayer()
     {
         _player.TakeDamage(_damage);
         CanAttack = false;
     }
-
 }
