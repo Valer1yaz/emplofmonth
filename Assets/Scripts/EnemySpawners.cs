@@ -13,7 +13,7 @@ public class EnemySpawners : MonoBehaviour
     private float _currentSpawnTimer;
     private LevelState _levelState;
 
-    public int _enemyCount; 
+    public int _enemyCount = 5; 
     public int _enemyLimit; 
 
     private void Start()
@@ -30,18 +30,18 @@ public class EnemySpawners : MonoBehaviour
         switch (_levelState)
         {
             case LevelState.First:
-                _enemyLimit = 3;
+                _enemyLimit = 8;
                 _spawnInterval = 60;
                 break;
 
             case LevelState.Second:
-                _enemyLimit = 8;
+                _enemyLimit = 13;
                 _spawnInterval = 30;
                 break;
 
             case LevelState.Third:
-                _enemyLimit = 12;
-                _spawnInterval = 15;
+                _enemyLimit = 17;
+                _spawnInterval = 30;
                 break;
         }
     }

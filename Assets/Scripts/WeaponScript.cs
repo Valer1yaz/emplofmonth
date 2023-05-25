@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
@@ -11,6 +9,10 @@ public class WeaponScript : MonoBehaviour
         if(other.tag == "Enemy")
         {
             other.GetComponent<EnemyHealth>().TakeDamage(_damageAmount);
+        }
+        else if (other.tag == "Mushrooms")
+        {
+            other.GetComponent<Mushrooms>().MushActivate();
         }
     }
 }

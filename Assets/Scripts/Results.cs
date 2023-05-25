@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class Results : MonoBehaviour
@@ -12,16 +9,19 @@ public class Results : MonoBehaviour
     int Kills = 0;
     int Objects = 0;
 
-    void Update() {
+    void Update()
+    {
         KillsText.text = Kills.ToString();
         ObjectsText.text = Objects.ToString();
     }
 
-    public void AddKill(){
+    public void AddKill()
+    {
         Kills++;
     }
 
-    public void AddObject(){
+    public void AddObject()
+    {
         Objects++;
     }
 }
