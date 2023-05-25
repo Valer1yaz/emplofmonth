@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scene.unity
     guid: d9c290f983570784b97da40b9c19bd2e
-  - enabled: 1
-    path: Assets/Scenes/Results.unity
-    guid: 2a75db5547ce64342b89223d2b8d731e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d6da3d10aacedd241b725845d7c3d9dd, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 4e665665c740ce14e817429f83824108, type: 2}

@@ -13,8 +13,8 @@ public class EnemySpawners : MonoBehaviour
     private float _currentSpawnTimer;
     private LevelState _levelState;
 
-    public int _enemyCount; //подсчет врагов на карте
-    public int _enemyLimit; //предел врагов на карте
+    public int _enemyCount; 
+    public int _enemyLimit; 
 
     private void Start()
     {

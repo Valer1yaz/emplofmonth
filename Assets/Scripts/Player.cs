@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public AudioClip _damagePlayerAudio;
     public GameObject ResultScreen;
     public GameObject HealthScreen;
+    public GameObject HandMenu;
 
 
     void Start()
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         HealthScreen.SetActive(true);
         ResultScreen.SetActive(false);
+        HandMenu.SetActive(true); 
         Time.timeScale = 1;
     }
 
@@ -31,7 +33,8 @@ public class Player : MonoBehaviour
         if (_gameOver)
         {
             ResultScreen.SetActive(true);
-            HealthScreen.SetActive(false);     
+            HealthScreen.SetActive(false); 
+            HandMenu.SetActive(false);    
             Time.timeScale = 0;
         }
     }
