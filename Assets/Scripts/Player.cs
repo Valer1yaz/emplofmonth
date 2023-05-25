@@ -12,10 +12,13 @@ public class Player : MonoBehaviour
     public GameObject ResultScreen;
     public GameObject HealthScreen;
     public GameObject HandMenu;
+    private Player _player;
+
 
 
     void Start()
     {
+        
         _gameOver = false;
 
         _audioSource = GetComponent<AudioSource>();
@@ -23,6 +26,8 @@ public class Player : MonoBehaviour
         ResultScreen.SetActive(false);
         HandMenu.SetActive(true); 
         Time.timeScale = 1;
+        _player = FindObjectOfType<Player>();
+        
     }
 
     void Update()
@@ -35,6 +40,7 @@ public class Player : MonoBehaviour
             HealthScreen.SetActive(false); 
             HandMenu.SetActive(false);    
             Time.timeScale = 0;
+            _player.transform.position = new Vector3(-6, 0, 1);
         }
     }
 
