@@ -29,6 +29,8 @@ public class EnemyHealth : MonoBehaviour
         
         if (_enemyHealth <= 0)
         {
+            _results.AddKill();
+
             GetComponent<AudioSource>().PlayOneShot(_damageEnemyAudio);
             _healthBar.gameObject.SetActive(false);
             Destroy(this.gameObject);
@@ -37,7 +39,7 @@ public class EnemyHealth : MonoBehaviour
             Instantiate(_thingPrefabs[randThing], transform.position, Quaternion.identity);
             
             _enemySpawners._enemyCount--;
-            _results.AddKill();
+            
         }
         else
         {
